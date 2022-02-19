@@ -1,0 +1,14 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"addin",
+	"id":	"0bf6c466-d1cc-4326-8def-56aa51fbbc9e",
+	"author":	"FredThx",
+	"description":	{
+		"":	"Export faces to dxf files",
+		"1036" : "Export les faces selectionnées vers des fichiers dxf"
+	},
+	"version":	"0.0.1",
+	"runOnStartup":	true,
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}
