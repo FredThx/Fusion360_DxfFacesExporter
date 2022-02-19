@@ -1,14 +1,29 @@
 import adsk.core
 import os
+from pathlib import Path
 from ...lib import fusion360utils as futil
+from ...lib import my_utils
+
 from ... import config
+import gettext
+
+my_fusion = my_utils.MyFusion360()
+
+locale_dir = Path(__file__).resolve().parent.parent.parent/'locale'
+try:
+    traduction = gettext.translation("base", localedir=locale_dir, languages=[my_fusion.get_language()])
+    traduction.install("base")
+except:
+    gettext.install("base")
+
+
 app = adsk.core.Application.get()
 ui = app.userInterface
 
 
 CMD_ID = f'{config.COMPANY_NAME}_{config.ADDIN_NAME}_cmdDialog'
-CMD_NAME = 'Export to DXF'
-CMD_Description = 'Export faces to DXF files.'
+CMD_NAME = _('Export to DXF')
+CMD_Description = _('Export faces to DXF files.')
 
 # Specify that the command will be promoted to the panel.
 IS_PROMOTED = True
@@ -18,6 +33,7 @@ PANEL_ID = 'SolidScriptsAddinsPanel'
 COMMAND_BESIDE_ID = 'ScriptsManagerCommand'
 
 # Resource location for command icons, here we assume a sub folder in this directory named "resources".
+
 ICON_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources', '')
 
 # Local list of event handlers used to maintain a reference so
@@ -72,9 +88,9 @@ def command_created(args: adsk.core.CommandCreatedEventArgs):
     
     inputs = args.command.commandInputs
     # Selection faces
-    faces_input = inputs.addSelectionInput('faces_input', 'Faces to export', 'Select planes faces to export')
+    faces_input = inputs.addSelectionInput('faces_input', _('Faces to export'), _('Select planes faces to export'))
     faces_input.setSelectionLimits(0)
-    faces_input.addSelectionFilter("Faces")
+    faces_input.addSelectionFilter('Faces')
     
     futil.add_handler(args.command.execute, command_execute, local_handlers=local_handlers)
     #futil.add_handler(args.command.inputChanged, command_input_changed, local_handlers=local_handlers)
@@ -97,7 +113,7 @@ def command_execute(args: adsk.core.CommandEventArgs):
     if faces:
         #Ask for a path to export dxf files
         folderdlg = ui.createFolderDialog()
-        folderdlg.title = 'Please select a folder to save dxf files:'
+        folderdlg.title = _('Please select a folder to save dxf files:')
         reponse = folderdlg.showDialog()
         if reponse == adsk.core.DialogResults.DialogOK:
             folder = folderdlg.folder
@@ -111,7 +127,7 @@ def command_execute(args: adsk.core.CommandEventArgs):
                 try:
                     dxf_sketch = sketches.add(face)
                 except:
-                    ui.messageBox("Error on selection : not a plane face. This face is ignored.")
+                    ui.messageBox(_("Error on selection : not a plane face. This face is ignored."))
                 else:
                     if face.body.name in names:
                         names[face.body.name]+=1
@@ -124,7 +140,7 @@ def command_execute(args: adsk.core.CommandEventArgs):
                     dxf_sketch.deleteMe()
                     futil.log(f'DXF file created : {fullpath}')
                     files_exported.append(fullpath)
-            msg = f"{len(files_exported)} files created : \n"
+            msg = str(len(files_exported)) + ' ' + _("file(s) created.") + "\n"
             for file in files_exported:
                 msg+= f"\t{file}\n"
             ui.messageBox(msg)

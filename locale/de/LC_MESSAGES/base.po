@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-02-19 16:22+0100\n"
+"PO-Revision-Date: 2022-02-19 16:29+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: commands/DxfFacesExporter/entry.py:22
+msgid "Export to DXF"
+msgstr "Exportieren nach DXF"
+
+#: commands/DxfFacesExporter/entry.py:23
+msgid "Export faces to DXF files."
+msgstr "Exportieren Sie Gesichter in DXF-Dateien."
+
+#: commands/DxfFacesExporter/entry.py:87
+msgid "Faces to export"
+msgstr "Zu exportierende Gesichter"
+
+#: commands/DxfFacesExporter/entry.py:87
+msgid "Select planes faces to export"
+msgstr "Auswählen der zu exportierenden Ebenenflächen"
+
+#: commands/DxfFacesExporter/entry.py:112
+msgid "Please select a folder to save dxf files:"
+msgstr "Wählen Sie das Zielverzeichnis für die DXF-Dateien:"
+
+#: commands/DxfFacesExporter/entry.py:126
+msgid "Error on selection : not a plane face. This face is ignored."
+msgstr "Fehler bei der Auswahl: Eine Seite ist nicht flach. Sie wird ignoriert."
