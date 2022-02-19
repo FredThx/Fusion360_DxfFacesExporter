@@ -11,19 +11,19 @@ A faces DXF exporter for Fusion 360
 2. Start Fusion 360
 3. Start the Add_In in Script and Add_Ins:
 
-![Add_In image](Capture4.PNG)
+![Add_In image](./images/Capture4.PNG)
 
 3. Check you have a new Add-In :
 
-![Add_In image](Capture1.PNG)
+![Add_In image](./images/Capture1.PNG)
 
 ## Usage :
 
 1. Open a design with sketches you would like to save out as a DXF.
 2. Open the Add_Ins and select the faces you want to export
 
-![Add_In image](Capture2.PNG)
+![Add_In image](./images/Capture2.PNG)
 
 3. Click "OK" and choose the output folder
 
-![Add_In image](Capture3.PNG)
+![Add_In image](./images/Capture3.PNG)
