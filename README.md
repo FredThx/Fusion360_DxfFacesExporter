@@ -1,7 +1,7 @@
 # FusionExportFaceDxf
 A faces DXF exporter for Fusion 360
 
-## Instalation:
+## Installation:
 
 1. Clone the repo and place in the correct Scripts folder for your OS. If downloading the archive be sure to remove "-master" from the folder name.
 
@@ -9,11 +9,13 @@ A faces DXF exporter for Fusion 360
     * MacOS: `~/Library/Application Support/Autodesk/Autodesk Fusion 360/API/AddIns`
 
 2. Start Fusion 360
+3. Start the Add_In in Script and Add_Ins:
+
+![Add_In image](Capture4.PNG)
+
 3. Check you have a new Add-In :
 
 ![Add_In image](Capture1.PNG)
-
-(If not go active it on Add_Ins)
 
 ## Usage :
 
