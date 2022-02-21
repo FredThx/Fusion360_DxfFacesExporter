@@ -9,7 +9,7 @@ A faces DXF exporter for Fusion 360
     * MacOS: `~/Library/Application Support/Autodesk/Autodesk Fusion 360/API/AddIns`
 
 2. Start Fusion 360
-3. Start the Add_In in Script and Add_Ins:
+3. Go to Add_Ins/Add_Ins and start DxfFacesExporter
 
 ![Add_In image](./images/Capture4.PNG)
 
